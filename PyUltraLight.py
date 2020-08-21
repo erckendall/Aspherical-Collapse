@@ -472,10 +472,10 @@ def evolve(central_mass, num_threads, length, length_units, resol, initial_z, fi
         else:
             talt[i - 3] = tm[i]
     timestamp = '{}{}{}{}{}{}{}{}{}{}{}{}{}'.format(tm[0], '.', tm[1], '.', tm[2], '_', talt[0], ':', talt[1], ':', talt[2], '_', resol)
-    file = open('{}{}{}'.format('./', save_path, '/timestamp.txt'), "w+")
+    file = open('{}{}'.format(save_path, '/timestamp.txt'), "w+")
     file.write(timestamp)
-    os.makedirs('{}{}{}{}'.format('./', save_path, '/', timestamp))
-    file = open('{}{}{}{}{}'.format('./', save_path, '/', timestamp, '/config.txt'), "w+")
+    os.makedirs('{}{}{}'.format(save_path, '/', timestamp))
+    file = open('{}{}{}{}'.format(save_path, '/', timestamp, '/config.txt'), "w+")
     file.write(('{}{}'.format('resol = ', resol)))
     file.write('\n')
     file.write(('{}{}'.format('axion_mass (kg) = ', axion_mass)))
